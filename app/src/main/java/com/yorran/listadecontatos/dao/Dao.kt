@@ -6,8 +6,8 @@ import com.yorran.listadecontatos.models.User
 
 //Assinatura para Informar que a interface é um Objeto de Acesso
 @Dao
-interface Dao {
+interface UserDao {
 
     @Insert
-    fun insert(user: MutableList<User>)
+    suspend fun insert(user: MutableList<User>)
 }

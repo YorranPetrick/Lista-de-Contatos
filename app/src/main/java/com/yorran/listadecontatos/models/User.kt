@@ -9,9 +9,8 @@ import androidx.room.PrimaryKey
 data class User(
     @ColumnInfo(name = "FamilyName") val familyName : String,
     @ColumnInfo(name = "FirstName") val firstName : String,
-    @ColumnInfo(name = "Telephone") val telephone : String
-
-
-){
+    @ColumnInfo(name = "Telephone") val telephone : String,
+    @ColumnInfo(name = "DDD") val ddd: String,
     @PrimaryKey(autoGenerate = true) var id : Int = 0
-}
+
+)

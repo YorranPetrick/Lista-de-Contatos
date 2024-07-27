@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt") // Adicionado para suporte ao kapt
 }
 
 android {
@@ -39,14 +40,11 @@ android {
 }
 
 dependencies {
-
     val room_version = "2.6.1"
 
     implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
-    // optional - Kotlin Extensions and Coroutines support for Room
-    implementation("androidx.room:room-ktx:$room_version")
-
+    kapt("androidx.room:room-compiler:$room_version") // Usar kapt ao invés de annotationProcessor
+    implementation("androidx.room:room-ktx:$room_version") // Extensões Kotlin e suporte a Coroutines
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
