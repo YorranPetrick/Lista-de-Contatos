@@ -14,4 +14,6 @@ interface UserDao {
 
     @Query("SELECT * FROM Table_User ORDER BY FirstName ASC")
     suspend fun getAll() : MutableList<User>
+    @Query("UPDATE Table_User SET FamilyName = :updateFamilyName, FirstName = :updateFirstName, Telephone = :updateTelephone, DDD = :updateDDD WHERE id = :idUser")
+    suspend fun updateUser(idUser : Int, updateFamilyName: String, updateFirstName: String, updateTelephone: String, updateDDD: String)
 }
