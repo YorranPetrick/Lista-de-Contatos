@@ -22,7 +22,7 @@ class Adapter(private val context: Context, private val listaContato: MutableLis
     override fun onBindViewHolder(holder: ContatosViewHolder, position: Int) {
         //Recuperando as informações contidas na listaContatos e passando aos campos correspondentes
         holder.idFirstNamee.text = listaContato[position].firstName
-        holder.idNomeFamily.text = listaContato[position].firstName
+        holder.idNomeFamily.text = listaContato[position].familyName
         holder.idNumber.text = "(${listaContato[position].ddd}) ${listaContato[position].telephone}"
     }
 

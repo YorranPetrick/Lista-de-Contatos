@@ -40,6 +40,7 @@ class AddContactActivity : AppCompatActivity() {
             val telephone = binding.Telephone.text.toString()
 
             verificarCampos(firstName, familyName, dddPhone, telephone)
+            finish()
         }
 
 
